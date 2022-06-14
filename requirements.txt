@@ -1,0 +1,12 @@
+asgiref==3.5.1
+distlib==0.3.4
+Django==4.0.4
+django-cleanup==6.0.0
+django-debug-toolbar==3.4.0
+filelock==3.6.0
+Pillow==9.1.0
+platformdirs==2.5.2
+six==1.16.0
+sqlparse==0.4.2
+tzdata==2022.1
+virtualenv==20.14.1
