@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body style="height: 100vh; overflow: hidden">
+<div class="row justify-content-center align-items-center h-100">
+    <div class="col-md-4">
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" value="Sign Up" class="btn btn-success">
+        </form>
+    </div>
+</div>
+</body>
+</html>
