@@ -4,7 +4,6 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.shortcuts import render
 from django.template.loader import render_to_string
-from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views.generic import FormView
@@ -43,5 +42,6 @@ def activate_email(request, uidb64, token):
 
     if user and not user.is_active and default_token_generator.check_token(user, token):
         user.is_active = True
+        user.save()
         return render(request, 'account/verification_success.html')
     return render(request, 'account/verification_failed.html')
