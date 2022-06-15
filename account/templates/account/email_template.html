@@ -5,9 +5,9 @@
     <title>Title</title>
 </head>
 {% autoescape off %}
-    Hi {{ user.username }},
-    Please click on the link to confirm your registration,http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-    If you think, it's not you, then just ignore this email.
+    <p>Hi {{ user.email }},</p>
+    <p>Please click on the link to confirm your registration,http://{{ domain }}{% url 'account:activate-email' uidb64=uid token=token %}</p>
+    <p>If you think, it's not you, then just ignore this email.</p>
 {% endautoescape %}
 </body>
 </html>
